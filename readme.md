@@ -1,16 +1,14 @@
 <h1 align="center"> 
     
-    imagem
-
+   ![Image](https://github.com/user-attachments/assets/69854496-c6a5-430a-b10c-9c325a554918)
+    
+![Static Badge](https://img.shields.io/badge/conclu%C3%ADdo-brightgreen)
 
 </h1>
 
-<div align="center" style="display: flex; align-items: center; gap: 15px;">
-    https://img.shields.io/badge/JDK-21.0.6-red
+## Descrição
 
-    https://img.shields.io/badge/conclu%C3%ADdo-brightgreen
-</div>
-
+Programa que interage com a API <a href="https://www.exchangerate-api.com/" target="_blank">Exchange Rate</a> e converte um valor especificado pelo usuário para uma outra moeda.
 
 ## Funcionalidades
 
