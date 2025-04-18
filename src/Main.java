@@ -4,12 +4,20 @@ import br.com.alura.models.ConverterResponse;
 import java.util.Scanner;
 
 public class Main {
+
+    public static void calcConversion(String initialCurrency, String currencyToConvert) {
+        Converter converter = new Converter();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o valor que deseja converter");
+        double value = scanner.nextDouble();
+        ConverterResponse convertedValue = converter.convertValue(initialCurrency, currencyToConvert, value);
+        System.out.printf("Valor %.2f [%s] corresponde ao valor final de =>>> %s [%s]%n", value, initialCurrency, convertedValue.conversion_result(), currencyToConvert);
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Converter converter = new Converter();
-        ConverterResponse convertedValue = null;
         int option = -1;
-        double value = 0;
         String menu = """
         1) Dólar =>> Peso argentino
         2) Peso argentino =>> Dólar
@@ -31,40 +39,22 @@ public class Main {
             try {
                 switch (option) {
                     case 1:
-                        System.out.println("Digite o valor que deseja converter");
-                        value = scanner.nextDouble();
-                        convertedValue = converter.convertValue("USD", "ARS", value);
-                        System.out.printf("Valor %.2f [USD] corresponde ao valor final de =>>> %s [ARS]%n", value, convertedValue.conversion_result());
+                        calcConversion("USD", "ARS");
                         break;
                     case 2:
-                        System.out.println("Digite o valor que deseja converter");
-                        value = scanner.nextDouble();
-                        convertedValue = converter.convertValue("ARS", "USD", value);
-                        System.out.printf("Valor %.2f [ARS] corresponde ao valor final de =>>> %s [USD]%n", value, convertedValue.conversion_result());
+                        calcConversion("ARS", "USD");
                         break;
                     case 3:
-                        System.out.println("Digite o valor que deseja converter");
-                        value = scanner.nextDouble();
-                        convertedValue = converter.convertValue("USD", "BRL", value);
-                        System.out.printf("Valor %.2f [USD] corresponde ao valor final de =>>> %s [BRL]%n", value, convertedValue.conversion_result());
+                        calcConversion("USD", "BRL");
                         break;
                     case 4:
-                        System.out.println("Digite o valor que deseja converter");
-                        value = scanner.nextDouble();
-                        convertedValue = converter.convertValue("BRL", "USD", value);
-                        System.out.printf("Valor %.2f [BRL] corresponde ao valor final de =>>> %s [USD]%n", value, convertedValue.conversion_result());
+                        calcConversion("BRL", "USD");
                         break;
                     case 5:
-                        System.out.println("Digite o valor que deseja converter");
-                        value = scanner.nextDouble();
-                        convertedValue = converter.convertValue("USD", "COP", value);
-                        System.out.printf("Valor %.2f [USD] corresponde ao valor final de =>>> %s [COP]%n", value, convertedValue.conversion_result());
+                        calcConversion("USD", "COP");
                         break;
                     case 6:
-                        System.out.println("Digite o valor que deseja converter");
-                        value = scanner.nextDouble();
-                        convertedValue = converter.convertValue("COP", "USD", value);
-                        System.out.printf("Valor %.2f [COP] corresponde ao valor final de =>>> %s [USD]", value, convertedValue.conversion_result());
+                        calcConversion("COP", "USD");
                         break;
                     default:
                         System.out.println("Opção inválida...");
